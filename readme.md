@@ -1,0 +1,1 @@
+O objetivo é criar um jogo de memória onde você deve encontrar pares de emojis. Vou mostrar como estruturar a página com HTML, estilizar com CSS e adicionar interatividade com JavaScript. Durante o desenvolvimento, você aprenderá várias dicas valiosas e, ao final, terá um projeto incrível para o seu portfólio. Vamos juntos nessa jornada!
