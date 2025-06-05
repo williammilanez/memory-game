@@ -59,4 +59,26 @@ img {
 
   background-image: url(./assets/lines.svg);
   background-size: 100%;
+
+  /* para centralizar o emoji */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.revealed {
+  background-color: #fff;
+  border-color: #dadada;
+}
+
+.card-emoji {
+  font-size: 40px;
+
+  /* para esconder o emoji */
+  display: none;
+}
+
+.revealed .card-emoji {
+  /* para fazer o emoji aparecer, adicionando a classe .revealed */
+  display: block;
 }
