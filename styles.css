@@ -16,7 +16,7 @@ body {
 }
 
 .game-container {
-  min-width: 544px;
+  max-width: 480px;
 }
 
 .game-header {
@@ -32,4 +32,21 @@ img {
 .stats {
   color: #fff;
   font-size: 16px;
+}
+
+.cards-grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.card {
+  /* o método de calc serve para descontar um valor, no caso em questão cada cartão ocupa 25% e desconta 5px do gap */
+  width: calc(25% - 5px);
+
+  /* ao invés de usar uma altura fixa, exemplo height: 50px, usamos uma altura flexível (altura baseada na largura) */
+  aspect-ratio: 1;
+
+  background-color: #8234e0;
 }
