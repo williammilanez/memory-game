@@ -23,6 +23,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin-bottom: 32px;
 }
 
 img {
@@ -37,6 +39,8 @@ img {
 .cards-grid {
   width: 100%;
   display: flex;
+
+  /* o flex-wrap, joga o "quadrado" para a linha de baixo, caso ele não caiba na linha */
   flex-wrap: wrap;
   gap: 5px;
 }
@@ -49,4 +53,10 @@ img {
   aspect-ratio: 1;
 
   background-color: #8234e0;
+
+  border: 2px solid #5a0caf;
+  border-radius: 12px;
+
+  background-image: url(./assets/lines.svg);
+  background-size: 100%;
 }
