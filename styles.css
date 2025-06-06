@@ -78,6 +78,8 @@ img {
 .revealed {
   background-color: #ffffff;
   border-color: #dadada;
+
+  cursor: not-allowed; /* Cursor para mostrar que não é mais possível clicar na carta já virada */
 }
 
 .card-emoji {

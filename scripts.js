@@ -65,6 +65,13 @@ function renderCards() {
 }
 
 function handleCardClick(cardElement, card) {
+  if (
+    isCheckingPair || // Ignora o clique enquanto verifica o par
+    cardElement.classList.contains("revealed") // Ignora o clique se a carta já está virada
+  ) {
+    return;
+  }
+
   // Revela a carta
   cardElement.classList.add("revealed");
 
@@ -73,9 +80,10 @@ function handleCardClick(cardElement, card) {
 
   // Verifica se é a segunda carta virada
   if (flippedCards.length === 2) {
+    isCheckingPair = true;
     console.log("Duas cartas viradas!");
   } else {
-    console.log("Uma carta virada!");
+    console.log("Mais carta!");
   }
 }
 
