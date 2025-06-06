@@ -75,7 +75,7 @@ function handleCardClick(cardElement, card) {
   if (flippedCards.length === 2) {
     console.log("Duas cartas viradas!");
   } else {
-    console.log("Vire mais uma carta!");
+    console.log("Uma carta virada!");
   }
 }
 
