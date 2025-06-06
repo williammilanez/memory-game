@@ -65,7 +65,18 @@ function renderCards() {
 }
 
 function handleCardClick(cardElement, card) {
-  console.log(cardElement, card);
+  // Revela a carta
+  cardElement.classList.add("revealed");
+
+  // Adiciona no Array as cartas que estão viradas
+  flippedCards.push({ cardElement, card });
+
+  // Verifica se é a segunda carta virada
+  if (flippedCards.length === 2) {
+    console.log("Duas cartas viradas!");
+  } else {
+    console.log("Vire mais uma carta!");
+  }
 }
 
 renderCards();
