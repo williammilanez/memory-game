@@ -45,6 +45,11 @@ function createCard(card) {
   // Adiciona o emoji ao card
   cardElement.appendChild(emoji);
 
+  // Adiciona o evento de click na carta
+  cardElement.addEventListener("click", () =>
+    handleCardClick(cardElement, card)
+  );
+
   return cardElement;
 }
 
@@ -57,6 +62,10 @@ function renderCards() {
     const cardElement = createCard(item);
     deck.appendChild(cardElement);
   });
+}
+
+function handleCardClick(cardElement, card) {
+  console.log(cardElement, card);
 }
 
 renderCards();
