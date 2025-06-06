@@ -32,12 +32,31 @@ function shuffleCards(array) {
   return shuffled;
 }
 
+function createCard(card) {
+  // Cria o elemento principal da carta
+  const cardElement = document.createElement("div");
+  cardElement.className = "card";
+
+  // Cria o elemento do emoji
+  const emoji = document.createElement("span");
+  emoji.className = "card-emoji";
+  emoji.textContent = card.content;
+
+  // Adiciona o emoji ao card
+  cardElement.appendChild(emoji);
+
+  return cardElement;
+}
+
 function renderCards() {
   const deck = document.getElementById("deck");
   deck.innerHTML = "";
 
   const cards = shuffleCards(cardItems);
-  cards.forEach((item) => console.log(item.content));
+  cards.forEach((item) => {
+    const cardElement = createCard(item);
+    deck.appendChild(cardElement);
+  });
 }
 
 renderCards();
