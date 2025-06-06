@@ -81,9 +81,21 @@ function handleCardClick(cardElement, card) {
   // Verifica se é a segunda carta virada
   if (flippedCards.length === 2) {
     isCheckingPair = true;
-    console.log("Duas cartas viradas!");
-  } else {
-    console.log("Mais carta!");
+
+    // Selecionar as cartas
+    const [firstCard, secondCard] = flippedCards;
+
+    // Verifica se as cartas formam um par
+    if (firstCard.card.content === secondCard.card.content) {
+      console.log("É igual!");
+    } else {
+      setTimeout(() => {
+        firstCard.cardElement.classList.remove("revealed");
+        secondCard.cardElement.classList.remove("revealed");
+        flippedCards = [];
+        isCheckingPair = false;
+      }, 1000);
+    }
   }
 }
 
