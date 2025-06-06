@@ -24,11 +24,20 @@ const cardItems = [
   { id: 16, content: "😻", matched: false },
 ];
 
+// Função que embaralha as cartas
 function shuffleCards(array) {
-  const shuffled = array.sort(() => (Math.random() > 0.5 ? 1 : -1)); // Positivo vai depois, negativo vai antes
+  // Positivo vai depois, negativo vai antes
+  const shuffled = array.sort(() => (Math.random() > 0.5 ? 1 : -1));
 
   return shuffled;
 }
 
-const cards = shuffleCards(cardItems);
-console.log(cards);
+function renderCards() {
+  const deck = document.getElementById("deck");
+  deck.innerHTML = "";
+
+  const cards = shuffleCards(cardItems);
+  cards.forEach((item) => console.log(item.content));
+}
+
+renderCards();
