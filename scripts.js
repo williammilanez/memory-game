@@ -93,16 +93,32 @@ function handleCardClick(cardElement, card) {
     if (firstCard.card.content === secondCard.card.content) {
       // Incrementa os pares encontrados
       matchedPairs++;
+
+      // Marca as cartas como encontradas
+      cardItems.forEach((item) => {
+        if (item.content === firstCard.card.content) {
+          item.matched = true;
+        }
+      });
+
+      // Verifica se tem itens para encontrar
+      const toFind = cardItems.find((item) => item.matched === false);
+      console.log(toFind);
+
+      if (!toFind) {
+        alert("Parabéns, você encontrou todos os pares!");
+      }
     } else {
       setTimeout(() => {
         firstCard.cardElement.classList.remove("revealed");
         secondCard.cardElement.classList.remove("revealed");
-      }, 1000);
+      }, 500);
     }
 
     flippedCards = [];
     isCheckingPair = false;
     updateStats();
+    console.log(cardItems);
   }
 }
 
