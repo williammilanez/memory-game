@@ -80,14 +80,19 @@ function handleCardClick(cardElement, card) {
 
   // Verifica se é a segunda carta virada
   if (flippedCards.length === 2) {
+    // Atualiza para verdadeiro para sinalizar que vamos verificar o par
     isCheckingPair = true;
+
+    // Incrementa o contador de tentativas
+    attempts++;
 
     // Selecionar as cartas
     const [firstCard, secondCard] = flippedCards;
 
     // Verifica se as cartas formam um par
     if (firstCard.card.content === secondCard.card.content) {
-      console.log("É igual!");
+      // Incrementa os pares encontrados
+      matchedPairs++;
     } else {
       setTimeout(() => {
         firstCard.cardElement.classList.remove("revealed");
@@ -96,7 +101,15 @@ function handleCardClick(cardElement, card) {
         isCheckingPair = false;
       }, 1000);
     }
+
+    updateStats();
   }
+}
+
+function updateStats() {
+  document.getElementById(
+    "stats"
+  ).textContent = `${matchedPairs} acertos de ${attempts} tentativas`;
 }
 
 renderCards();
