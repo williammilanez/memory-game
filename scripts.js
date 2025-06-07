@@ -97,11 +97,11 @@ function handleCardClick(cardElement, card) {
       setTimeout(() => {
         firstCard.cardElement.classList.remove("revealed");
         secondCard.cardElement.classList.remove("revealed");
-        flippedCards = [];
-        isCheckingPair = false;
       }, 1000);
     }
 
+    flippedCards = [];
+    isCheckingPair = false;
     updateStats();
   }
 }
