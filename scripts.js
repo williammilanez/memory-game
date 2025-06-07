@@ -101,9 +101,17 @@ function handleCardClick(cardElement, card) {
         }
       });
 
+      // Limpa Array de cartas viradas
+      flippedCards = [];
+
+      // Libera próxima rodada
+      isCheckingPair = false;
+
+      // Atualiza o placar
+      updateStats();
+
       // Verifica se tem itens para encontrar
       const toFind = cardItems.find((item) => item.matched === false);
-      console.log(toFind);
 
       if (!toFind) {
         alert("Parabéns, você encontrou todos os pares!");
@@ -112,13 +120,12 @@ function handleCardClick(cardElement, card) {
       setTimeout(() => {
         firstCard.cardElement.classList.remove("revealed");
         secondCard.cardElement.classList.remove("revealed");
-      }, 500);
-    }
 
-    flippedCards = [];
-    isCheckingPair = false;
-    updateStats();
-    console.log(cardItems);
+        flippedCards = [];
+        isCheckingPair = false;
+        updateStats();
+      }, 1000);
+    }
   }
 }
 
