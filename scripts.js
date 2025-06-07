@@ -128,4 +128,28 @@ function updateStats() {
   ).textContent = `${matchedPairs} acertos de ${attempts} tentativas`;
 }
 
+// Função que reinicia o jogo
+function resetGame() {
+  flippedCards = [];
+  matchedPairs = 0;
+  attempts = 0;
+  isCheckingPair = false;
+
+  // Desmarcar todas as cartas
+  cardItems.forEach((card) => (card.matched = false));
+
+  // Renderiza novamente e atualiza placar
+  renderCards();
+  updateStats();
+}
+
 renderCards();
+
+function initGame() {
+  renderCards();
+
+  // Adiciona o evento de reiniciar o jogo no botão
+  document.getElementById("restart").addEventListener("click", resetGame);
+}
+
+initGame();
