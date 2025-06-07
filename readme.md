@@ -16,15 +16,6 @@ Quando todos os pares forem encontrados, uma mensagem de parabéns é exibida.
 - CSS3
 - JavaScript (Vanilla JS)
 
-## 📁 Estrutura dos Arquivos
-
-/
-├── index.html # Estrutura principal do jogo
-├── styles.css # Estilo visual e layout
-├── scripts.js # Lógica do jogo (embaralhar, verificar pares, placar, reinício)
-└── assets/
-└── lines.svg # Background decorativo das cartas
-
 ## 📌 Funcionalidades
 
 - Cartas embaralhadas a cada novo jogo
@@ -62,12 +53,14 @@ Durante o jogo, o placar é atualizado com:
 - Níveis de dificuldade com mais cartas
 - Temas diferentes (ex: animais, frutas, etc.)
 
-## 📷 Prévia visual (opcional)
+## 📷 Prévia visual
 
-![alt text](game-image.png)
+<p align="center">
+  <img src="game-image.png" alt="Prévia do jogo da memória" width="300"/>
+</p>
 
 ## 🧑‍💻 Autor
 
-Desenvolvido por Rocketseat e adaptador William com fins educacionais e práticos.
+Desenvolvido por **Rocketseat** e adaptado por **William Milanez** com fins educacionais e práticos.
 
 ---
